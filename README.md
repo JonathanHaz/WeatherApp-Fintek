@@ -36,17 +36,23 @@
 2. Install dependencies for the backend:
    cd backend
    npm install
-3. Create a .env file in the backend directory and add your WeatherAPI key:
-   WEATHER_API_KEY=your_weather_api_key
+    
+3. Create a .env file in the backend directory and add your WeatherAPI key and Port:
+   WEATHER_API_KEY= "200b790d6df94c9c88d82252240708"
+   PORT = 3000
+    
 4. Install dependencies for the frontend:
    cd ../frontend
    npm install
-5. Start the backend server:
+   
+6. Start the backend server:
    cd ../backend
    npm start
-6. Start the frontend development server:
+   
+8. Start the frontend development server:
    cd ../frontend
    npm run dev
+   
    The app should now be running at http://localhost:3000.</code></pre>
 <h2>Usage</h2>
 <ol>
