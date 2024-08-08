@@ -3,7 +3,7 @@ import styles from '../styles/weathercard.module.css';
 
 export default function WeatherCard({ weatherData }) {
   if (!weatherData) {
-    return <div ></div>;
+    return <div className={styles.weatherContainer} ></div>;
   }
 
   const {
