@@ -33,28 +33,21 @@
 <pre><code>1. Clone the repository:
    git clone https://github.com/JonathanHaz/WeatherApp-Fintek.git
    cd WeatherApp-Fintek
-
 2. Install dependencies for the backend:
    cd backend
    npm install
-
 3. Create a .env file in the backend directory and add your WeatherAPI key:
    WEATHER_API_KEY=your_weather_api_key
-
 4. Install dependencies for the frontend:
    cd ../frontend
    npm install
-
 5. Start the backend server:
    cd ../backend
    npm start
-
 6. Start the frontend development server:
    cd ../frontend
    npm run dev
-
    The app should now be running at http://localhost:3000.</code></pre>
-
 <h2>Usage</h2>
 <ol>
     <li>Open the app in your browser.</li>
