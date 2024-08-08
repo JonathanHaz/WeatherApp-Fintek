@@ -1,0 +1,75 @@
+.searchForm label {
+    display: block;
+    font-size: 12px;
+    margin-bottom: 8px;
+    margin-left: 8px;
+    color: var(--left-panel-text);
+    
+  }
+  
+  .inputContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 30vw;
+  }
+  
+  .inputContainer input {
+    padding: 20px;
+    width: 30vw;
+    border-radius: 10px;
+    color: var(--input-text);
+  }
+
+  .inputContainer input:focus {
+    outline: var(--left-panel-text) solid 0.5px;
+  }
+  
+
+  .errorMessage {
+    color: red;
+    margin: 0;
+  }
+  
+  .inputContainer button {
+    position: absolute;
+    padding: 10px 25px;
+    right: 1rem;
+    background-color: var(--button-bg);
+    color: var(--primary-text);
+    font-family: var(--primary-font);
+    font-weight: lighter;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .inputContainer button:hover {
+    background-color: #2b7830;
+  }
+
+@media (max-width: 1024px) {
+  .searchForm {
+    width: 80%;
+  }
+
+  .inputContainer input {
+    width: 80%;
+  }
+
+  .inputContainer button {
+    padding: 8px 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .inputContainer {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .inputContainer button {
+    top: .75rem;
+    right: 1.5rem;
+  }
+}

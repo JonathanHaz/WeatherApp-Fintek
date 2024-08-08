@@ -1,19 +1,23 @@
 const axios = require('axios');
 require('dotenv').config();
 
-const getWeatherData = ('/weather', async (req, res) => {
+const getWeatherData = async (req, res) => {
     const { q } = req.query;
     const WEATHER_API_KEY = process.env.WEATHER_API_KEY;
     const WEATHER_API_URL = 'https://api.weatherapi.com/v1/forecast.json';
+
     if (!q) {
         return res.status(400).json({ error: 'Location query parameter is required' });
     }
+
     try {
         const response = await axios.get(WEATHER_API_URL, {
             params: {
                 key: WEATHER_API_KEY,
+                q: q.trim(),
                 q,
-                days: 1, 
+    
+                days: 1,
             },
         });
 
@@ -22,6 +26,8 @@ const getWeatherData = ('/weather', async (req, res) => {
                 name: city,
                 country,
                 localtime: dateTime,
+                lat: latitude,
+                lon: longitude,
             },
             current: {
                 temp_c: temperature,
@@ -31,7 +37,7 @@ const getWeatherData = ('/weather', async (req, res) => {
                 wind_kph: wind,
             },
             forecast: {
-                forecastday: [ { hour } = {} ],
+                forecastday: [{ hour } = {}],
             },
         } = response.data;
 
@@ -47,6 +53,8 @@ const getWeatherData = ('/weather', async (req, res) => {
         res.json({
             city,
             country,
+            latitude,
+            longitude,
             date: `${day}/${month}/${year}`,
             hour: hourNow,
             temperature,
@@ -60,6 +68,6 @@ const getWeatherData = ('/weather', async (req, res) => {
         console.error('Error fetching data:', error.message);
         res.status(500).json({ error: 'Failed to fetch weather data', details: error.message });
     }
-});
+};
 
 module.exports = { getWeatherData };

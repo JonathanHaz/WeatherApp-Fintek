@@ -1,56 +1,59 @@
-import React from 'react'
-import styles from '../styles/weathercard.module.css'
+import React from 'react';
+import styles from '../styles/weathercard.module.css';
 
-export default function WeatherCard() {
+export default function WeatherCard({ weatherData }) {
+  if (!weatherData) {
+    return <div ></div>;
+  }
+
+  const {
+    city,
+    country,
+    date,
+    hour,
+    temperature,
+    condition,
+    precipitation,
+    humidity,
+    wind,
+    hourlyForecast,
+  } = weatherData;
+
   return (
     <div className={styles.weatherContainer}>
-       <div className={styles.weatherCard}>
+      <div className={styles.weatherCard}>
         <div className={styles.location}>
-                <h2>Tel Aviv</h2>
-                <p>Israel</p>
-                <p>13/2/22 at 16:00</p>
+          <h2>{city}</h2>
+          <p>{country}</p>
+          <p>{date} at {hour}:00</p>
         </div>
-                <div className={styles.temperature}>
-                    <span>18°</span>
-                    <p>sunny</p>
-                </div>
-                <div className={styles.details}>
-                    <div className={styles.detail}>
-                        <p>precipitation</p>
-                        <p>0 mm</p>
-                    </div>
-                     <div className={styles.detail}>
-                        <p>humidity</p>
-                        <p>53%</p>
-                    </div>
-                     <div className={styles.detail}>
-                        <p>wind</p>
-                        <p>28 km/h</p>
-                    </div>
-                </div>
-                <div className={styles.hourlyForecast}>
-                    <div>
-                        <p>13:00</p>
-                        <p>19°</p>
-                    </div>
-                    <div>
-                        <p>14:00</p>
-                        <p>20°</p>
-                    </div>
-                    <div>
-                        <p>15:00</p>
-                        <p>20°</p>
-                    </div>
-                    <div>
-                        <p>16:00</p>
-                        <p>18°</p>
-                    </div>
-                    <div>
-                        <p>17:00</p>
-                        <p>16°</p>
-                    </div>
-                </div>
+        <div className={styles.temperature}>
+          <span >{Math.floor(temperature)}<span style={{color : "#EFEFEF"}}>°</span></span>
+          <p>{condition}</p>
+        </div>
+        <div className={styles.details}>
+          <div className={styles.detail}>
+            <span>precipitation</span>
+            <p>{precipitation} mm</p>
+          </div>
+          <div className={styles.detail}>
+            <span>humidity</span>
+            <p>{humidity}%</p>
+          </div>
+          <div className={styles.detail}>
+            <span>wind</span>
+            <p>{wind} km/h</p>
+          </div>
+        </div>
+        <div className={styles.hourlyForecast}>
+          {hourlyForecast.map((hour, index) => (
+            <div className={styles.hour} key={index}>
+              <p className={styles.time}>{hour.time}</p>
+              <p style={{color : "#EFEFEF"}}>{Math.floor(hour.temp)}°</p>
             </div>
+          ))}
+        </div>
+      </div>
     </div>
-  )
+  );
 }

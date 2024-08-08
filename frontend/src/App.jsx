@@ -1,9 +1,13 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Logo from './assets/logo.svg';
 import './styles/App.css';
 import WeatherCard from './components/WeatherCard';
+import Form from './components/Form';
 
 function App() {
+  const [weatherData, setWeatherData] = useState(null);
+  console.log(weatherData);
+
   return (
     <div className="container">
       <div className="content">
@@ -13,21 +17,20 @@ function App() {
           </header>
           <div className='description'><p>Use our weather app to see the weather around the world</p></div>
           <div className='searchContainer'>
-            <form className="searchForm">
-              <label htmlFor="cityName">City name</label>
-              <div className='inputContainer'>
-                <input type="text" id="cityName" name="cityName" value="Tel Aviv"/>
-                <button type="submit">Check</button>
-              </div>
-            </form>
+            <Form setWeatherData={setWeatherData} />
           </div>
-          <div className="coordinates">
-            <p>latitude 32.07 &nbsp;&nbsp; longitude 34.76</p>
-            <p>accurate to 13/02/2022 at 16:24</p>
-          </div>
+          {weatherData ? (
+             <div className="coordinates">
+             <p>latitude {weatherData.latitude} &nbsp;&nbsp; longitude {weatherData.longitude}</p>
+             <p>accurate to {weatherData.date} at {weatherData.hour}:00</p>
+           </div>
+          ) : (
+            <div className='coordinates'></div>
+          )
+           }
         </div>
         <div className="rightPanel">
-          <WeatherCard/>
+          <WeatherCard weatherData={weatherData} />
         </div>
       </div>
     </div>

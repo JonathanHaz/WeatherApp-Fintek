@@ -1,10 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&display=swap');
+*{
+  --primary-bg : #F1F1F1;
+  --right-panel-bg : #DDE4E6;
+  --weather-card-bg : #27737D;
+  --primary-text : #FFFFFF;
+  --secondary-text : #d5e2e4;
+  --third-text: #A8C6CB;
+  --left-panel-text : #707070;
+  --input-text : #363636;
+  --button-bg : #046B3B;
+
+  --primary-font : 'Heebo', sans-serif;
+}
 
 body {
   margin: 0;
   padding: 0;
   font-family: 'Heebo', sans-serif;
-  background-color: #F1F1F1;
+  background-color: var(--primary-bg);
 }
 
 .container {
@@ -13,6 +26,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: var(--primary-bg);
 }
 
 .header img {
@@ -39,7 +53,7 @@ body {
   width: 16vw;
   height: 15vh;
   font-weight: 200;
-  color: #707070;
+  color: var(--left-panel-text);
   text-align: left;
 }
 
@@ -53,51 +67,9 @@ body {
   height: 30vh;
 }
 
-.searchForm {
-  width: 100%;
-}
-
-.searchForm label {
-  display: block;
-  font-size: 12px;
-  margin-bottom: 8px;
-  margin-left: 8px;
-  color: #707070;
-  
-}
-
-.inputContainer {
-  position: relative;
-  display: flex;
-  align-items: center;
-  width: 30vw;
-}
-
-.inputContainer input {
-  padding: 20px;
-  width: 30vw;
-  border: none;
-  border-radius: 10px;
-}
-
-.inputContainer button {
-  position: absolute;
-  padding: 10px 25px;
-  right: 1rem;
-  background-color: #2E7D32;
-  color: #FFF;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-.inputContainer button:hover {
-  background-color: #1f5a23;
-}
-
 .coordinates {
   font-size: 12px;
-  color: #707070;
+  color: var(--left-panel-text);
   align-self: flex-start;
   margin-left: 2rem;
   font-weight: 300;
@@ -109,4 +81,68 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .leftPanel, .rightPanel {
+    width: 100%;
+  }
+
+  .description p {
+    font-size: 20px;
+    width: 100%;
+  }
+
+  .searchContainer {
+    width: 100%;
+    height: auto;
+  }
+
+  .inputContainer input {
+    width: 80%;
+  }
+
+  .weatherCard {
+    width: 80%;
+    height: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .content {
+    flex-direction: column;
+  }
+
+  .leftPanel, .rightPanel {
+    width: 100%;
+  }
+
+  .description p {
+    font-size: 18px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .searchContainer {
+    width: 100%;
+    height: auto;
+    margin: 1rem 0;
+  }
+
+  .inputContainer {
+    width: 100%;
+  }
+
+  .inputContainer input {
+    width: 90%;
+  }
+
+  .weatherCard {
+    width: 90%;
+    height: auto;
+  }
 }
