@@ -55,9 +55,6 @@
     <li>Click the 'Check' button to fetch and display weather information for the city.</li>
 </ol>
 
-<h2>Contributing</h2>
-<p>Feel free to submit issues and pull requests. Please follow standard coding practices and provide clear commit messages.</p>
-
 <h2>License</h2>
 <p>This project is licensed under the <a href="LICENSE" target="_blank">MIT License</a>.</p>
 
