@@ -1,0 +1,85 @@
+.weatherContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+    width: 100%;
+    background-color: #DDE4E6;
+    border-radius: 4px;
+}
+
+.weatherCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #27737D;
+    color: #FFF;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    height: 60vh;
+    width: 25vw;
+    border-radius: 30px;
+}
+
+.location{
+    height: 10vh;
+    width: 20vw;
+    margin: 0;
+}
+
+.location h2 {
+    margin: 0;
+}
+
+.location p {
+    margin: 0;
+}
+
+.temperature {
+    display: flex;
+    flex-direction: column;
+    height: 30vh;
+    width: 20vw;
+}
+
+.temperature span {
+    font-size: 130px;
+    font-weight: bold;
+    letter-spacing: -.75rem;
+}
+
+.temperature p{
+    font-size: 24px;
+    margin-top: -3.75rem;
+    margin-right: 2rem;
+    text-align: center;
+}
+
+.details {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+}
+
+.detail {
+    justify-content: center;
+}
+.detail p {
+    margin: 0;
+}
+
+
+.hourlyForecast {
+    display: flex;
+    justify-content: space-around;
+}
+
+.hourlyForecast div {
+    text-align: center;
+}
+
+.hourlyForecast p {
+    font-size: 12px;
+}
