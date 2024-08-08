@@ -55,8 +55,7 @@
     <li>Click the 'Check' button to fetch and display weather information for the city.</li>
 </ol>
 
-<h2>License</h2>
-<p>This project is licensed under the <a href="LICENSE" target="_blank">MIT License</a>.</p>
-
+<h2>Created</h2>
+<p>This app was created by Jonathan Hazan as an entry test for Fintek Digital</p>
 </body>
 </html>
