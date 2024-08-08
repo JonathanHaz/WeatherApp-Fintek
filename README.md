@@ -3,12 +3,13 @@
 <body>
 
 <h1>Weather API App</h1>
-<img src="./assets/review.png" alt="Description of Image" />
+<img width="1512" alt="Review" src="https://github.com/user-attachments/assets/ec536ca6-04f6-4328-8629-4c692487a776">
 
 <h2>Overview</h2>
 <p>The Weather API App provides weather information by fetching data from the WeatherAPI. It includes current weather conditions and hourly forecasts. The app is built with a React frontend and a Node.js/Express backend.</p>
 
 <h2>Features</h2>
+
 <ul>
     <li>Fetch current weather conditions for a specified city.</li>
     <li>Display hourly weather forecasts for the next 5 hours.</li>
