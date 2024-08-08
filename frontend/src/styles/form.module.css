@@ -53,23 +53,32 @@
     width: 80%;
   }
 
+  .inputContainer {
+    width: 100%;
+    flex-direction: column;
+  }
+
   .inputContainer input {
-    width: 80%;
+    width: 85%;
   }
 
   .inputContainer button {
-    padding: 8px 20px;
+    top: .5rem;
+    right: 1.5rem;
   }
 }
 
 @media (max-width: 767px) {
   .inputContainer {
     width: 100%;
-    flex-direction: column;
+  }
+
+  .inputContainer input {
+    width: 60vw;
   }
 
   .inputContainer button {
-    top: .75rem;
-    right: 1.5rem;
+    top: .5rem;
+    right: 1rem;
   }
 }

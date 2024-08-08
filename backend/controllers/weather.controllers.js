@@ -5,18 +5,29 @@ const getWeatherData = async (req, res) => {
     const { q } = req.query;
     const WEATHER_API_KEY = process.env.WEATHER_API_KEY;
     const WEATHER_API_URL = 'https://api.weatherapi.com/v1/forecast.json';
+    const SEARCH_API_URL = 'https://api.weatherapi.com/v1/search.json';
 
     if (!q) {
         return res.status(400).json({ error: 'Location query parameter is required' });
     }
 
     try {
+        const searchResponse = await axios.get(SEARCH_API_URL, {
+            params: {
+                key: WEATHER_API_KEY,
+                q,
+            },
+        });
+
+        const exactMatch = searchResponse.data.find(city => city.name.toLowerCase() === q.toLowerCase());
+
+        if (!exactMatch) {
+            return res.status(400).json({ error: `City '${q}' not found` });
+        }
         const response = await axios.get(WEATHER_API_URL, {
             params: {
                 key: WEATHER_API_KEY,
-                q: q.trim(),
-                q,
-    
+                q: exactMatch.name,
                 days: 1,
             },
         });

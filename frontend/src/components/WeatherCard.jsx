@@ -33,16 +33,16 @@ export default function WeatherCard({ weatherData }) {
         </div>
         <div className={styles.details}>
           <div className={styles.detail}>
-            <span>precipitation</span>
+            <span>Precipitation</span>
             <p>{precipitation} mm</p>
           </div>
           <div className={styles.detail}>
-            <span>humidity</span>
+            <span>Humidity</span>
             <p>{humidity}%</p>
           </div>
           <div className={styles.detail}>
-            <span>wind</span>
-            <p>{wind} km/h</p>
+            <span>Wind</span>
+            <p>{Math.floor(wind)} km/h</p>
           </div>
         </div>
         <div className={styles.hourlyForecast}>
