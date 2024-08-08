@@ -32,8 +32,8 @@
 <h3>Installation</h3>
 <pre><code>1. Clone the repository:
 
-   git clone https://github.com/yourusername/weather-api-app.git
-   cd weather-api-app
+   git clone https://github.com/JonathanHaz/WeatherApp-Fintek.git
+   cd WeatherApp-Fintek
 
 2. Install dependencies for the backend:
 
@@ -57,7 +57,7 @@
 6. Start the frontend development server:
 
    cd ../frontend
-   npm start
+   npm run dev
 
    The app should now be running at http://localhost:3000.</code></pre>
 
@@ -67,29 +67,6 @@
     <li>Enter a city name in the search field.</li>
     <li>Click the 'Check' button to fetch and display weather information for the city.</li>
 </ol>
-
-<h2>API Endpoints</h2>
-
-<h3><code>GET /weather</code></h3>
-<p>Fetches weather data for a specified city.</p>
-
-<h4>Query Parameters:</h4>
-<ul>
-    <li><code>q</code> (string): The name of the city to search for.</li>
-</ul>
-
-<h4>Responses:</h4>
-<ul>
-    <li><strong>200 OK</strong>: Returns weather data, including current conditions and hourly forecast.</li>
-    <li><strong>400 Bad Request</strong>: Missing or invalid city name.</li>
-    <li><strong>500 Internal Server Error</strong>: Error fetching data from the API.</li>
-</ul>
-
-<h2>Development</h2>
-<ul>
-    <li><strong>Backend</strong>: Located in the <code>backend</code> directory.</li>
-    <li><strong>Frontend</strong>: Located in the <code>frontend</code> directory.</li>
-</ul>
 
 <h2>Contributing</h2>
 <p>Feel free to submit issues and pull requests. Please follow standard coding practices and provide clear commit messages.</p>
